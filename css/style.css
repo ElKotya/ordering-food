@@ -211,6 +211,9 @@ button {
   color: #000000;
   visibility: hidden;
 }
+.modal.visible {
+  visibility: visible;
+}
 .modal__overlay {
   position: fixed;
   inset: 0;
