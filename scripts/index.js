@@ -26,6 +26,34 @@ let products = [
     title: 'Устрицы по Русски',
     description: 'Ошибка 404. Описание не найдено...',
     price: 1000
+  },
+  {
+    id: 4,
+    preview: './images/1.svg',
+    title: 'Устрицы по рокфеллеровски',
+    description: 'Значимость этих проблем настолько очевидна, что укрепление и развитие структуры',
+    price: 2700
+  },
+  {
+    id: 5,
+    preview: './images/2.svg',
+    title: 'Свиные ребрышки на гриле с зеленью',
+    description: 'Не следует, однако забывать, что реализация намеченных плановых',
+    price: 1600
+  },
+  {
+    id: 6,
+    preview: './images/3.svg',
+    title: 'Креветки по-королевски в лимонном соке',
+    description: 'Значимость этих проблем настолько очевидна, что укрепление и развитие структуры обеспечивает широкому кругу',
+    price: 1820
+  },
+  {
+    id: 7,
+    preview: './images/1.svg',
+    title: 'Устрицы по Русски',
+    description: 'Ошибка 404. Описание не найдено...',
+    price: 1000
   }
 ]
 
@@ -40,7 +68,7 @@ let products = [
 //   },
 // ]
 
-let basketList = []
+let basketList = JSON.parse(localStorage.getItem('basket')) ?? [];
 const renderCounter = () => {
   const headerInner = document.querySelector('.header__inner-info');
   const basketCount = document.querySelector('.basket__count');
@@ -89,7 +117,7 @@ const renderProducts = () => {
         } else {
           findedItem.count += 1;
         }
-        console.log(basketList);
+        localStorage.setItem('basket', JSON.stringify(basketList));
         updateBasketCounter('+');
       }
     })
@@ -148,6 +176,7 @@ const renderBasketList = () => {
           
         } else {
           removeElement(target.parentNode.parentNode);
+          basketList = basketList.filter((basketItem) => item.id !== basketItem.id)
         }
         
       } else if (className === 'products-card__bottom-btn') {
@@ -157,6 +186,9 @@ const renderBasketList = () => {
         renderBasketList();
         renderCounter();
       }
+      localStorage.setItem('basket', JSON.stringify(basketList));
+      console.log(basketList);
+      
     })
     return newDiv;
   });
@@ -175,4 +207,6 @@ modalCloseButton.addEventListener('click', () => {
   const modal = document.querySelector('.modal');
   modal.classList.remove('visible');
 })
+
+
 
