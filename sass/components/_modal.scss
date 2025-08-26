@@ -7,6 +7,10 @@
   color: #000000;
   visibility: hidden;
 
+  &.visible {
+    visibility: visible;
+  }
+
   &__overlay {
     position: fixed;
     inset: 0;
