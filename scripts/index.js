@@ -23,9 +23,9 @@ let products = [
   {
     id: 3,
     preview: './images/1.svg',
-    title: 'Устрицы по Русски',
-    description: 'Ошибка 404. Описание не найдено...',
-    price: 1000
+    title: 'Устрицы по рокфеллеровски',
+    description: 'Значимость этих проблем настолько очевидна, что укрепление и развитие структуры ',
+    price: 2700
   },
   {
     id: 4,
@@ -51,24 +51,19 @@ let products = [
   {
     id: 7,
     preview: './images/1.svg',
-    title: 'Устрицы по Русски',
-    description: 'Ошибка 404. Описание не найдено...',
-    price: 1000
+    title: 'Устрицы по рокфеллеровски',
+    description: 'Значимость этих проблем настолько очевидна, что укрепление и развитие структуры ',
+    price: 2700
   }
 ]
 
-// Пример объекта добавленного в корзину
-// let basketList = [
-//   {
-//     id: 0,
-//     preview: './images/1.svg',
-//     title: 'Устрицы по рокфеллеровски',
-//     count: 1,
-//     price: 2700
-//   },
-// ]
-
 let basketList = JSON.parse(localStorage.getItem('basket')) ?? [];
+const isLogin = JSON.parse(localStorage.getItem('isLoginSuccess'));
+console.log(typeof isLogin);
+if (!isLogin) {
+  window.location.href = 'login.html';
+}
+
 const renderCounter = () => {
   const headerInner = document.querySelector('.header__inner-info');
   const basketCount = document.querySelector('.basket__count');
@@ -136,7 +131,7 @@ const renderBasketList = () => {
     const newDiv = document.createElement('div');
     newDiv.className = 'products-card';
     newDiv.innerHTML = `
-      <img src="./images/1.svg" alt="" class="products-card__preview">
+      <img src="${item.preview}" alt="" class="products-card__preview">
       <h2 class="products-card__title">
         ${item.title}
       </h2>
@@ -206,6 +201,11 @@ const modalCloseButton = document.querySelector('.modal__inner-close');
 modalCloseButton.addEventListener('click', () => {
   const modal = document.querySelector('.modal');
   modal.classList.remove('visible');
+})
+
+document.querySelector('#signout').addEventListener('click', event => {
+  localStorage.setItem('isLoginSuccess', false);
+  window.location.href = 'login.html'
 })
 
 

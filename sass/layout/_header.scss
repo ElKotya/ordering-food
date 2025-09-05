@@ -5,7 +5,10 @@
   margin-bottom: 75px;
 
   .title {
+    font-family: 'Montserrat Semibold';
+    font-weight: 700;
     font-size: 32px;
+    text-transform: uppercase;
   }
 
   &__inner, &__inner-products {

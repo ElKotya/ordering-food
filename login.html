@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="login-background">
+
+<div class="authorization">
+    <div class="authorization-link">
+        <a href="#">Зарегистрироваться</a>
+    </div>
+    <h1 class="text">ВХОД</h1>
+    <form class="form" id="authorization-form" action="">
+        <div class="form-group">
+            <input class="form-input" name="userName" type="text" placeholder="Логин">
+            <div class="error-message" id="authorizationNameError"></div>
+        </div>
+        <div class="form-group">
+            <input class="form-input" name="userPassword" type="password" placeholder="Пароль">
+            <div class="error-message" id="authorizationPasswordError"></div>
+        </div>
+        <div class="form-btn__wrapper">
+            <button type="submit" class="form-btn">Войти</button>
+        </div>
+    </form>
+</div>
+
+<div class="registration" style="display: none;">
+    <div class="registration-link">
+        <a href="#">Авторизоваться</a>
+    </div>
+    <h1 class="text">РЕГИСТРАЦИЯ</h1>
+    <form class="form" id="registration-form" action="">
+        <div class="form-group">
+            <input class="form-input" name="userName" type="text" placeholder="Логин">
+            <div class="error-message" id="registrationNameError"></div>
+        </div>
+        <div class="form-group">
+            <input class="form-input" name="userPassword" type="password" placeholder="Пароль">
+            <div class="error-message" id="registrationPasswordError"></div>
+        </div>
+        <div class="input-checkbox">
+            <input type="checkbox" name="checkbox" id="checkbox">
+            <label for="checkbox">Я согласен получать обновления на почту</label>
+        </div>
+        <div class="form-btn__wrapper">
+            <button type="submit" class="form-btn" dara-error="Логин или пароль неверен">Зарегистрироваться</button>
+        </div>
+    </form>
+</div>
+<script src="./scripts/authorization.js"></script>
+</body>
+</html>

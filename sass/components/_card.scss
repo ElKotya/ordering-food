@@ -17,11 +17,15 @@
   }
 
   &__title {
+    font-family: 'Montserrat Regular';
+    font-weight: 500;
     font-size: 17px;
     margin-bottom: 14px;
   }
 
   &__description {
+    font-family: 'Montserrat Extra Light';
+    font-weight: 400;
     font-size: 14px;
     line-height: 18px;
   }
@@ -52,6 +56,8 @@
     margin-top: auto;
 
     &-price {
+      font-family: 'Montserrat Regular';
+      font-weight: 500;
       font-size: 17px;
     }
 

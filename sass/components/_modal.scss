@@ -27,6 +27,8 @@
     color: #FFFFFF;
 
     &-title {
+      font-family: 'Montserrat Semibold';
+      font-weight: 700;
       font-size: 32px;
       margin-bottom: 20px;
     }
@@ -70,6 +72,10 @@
     &-list {
       height: calc(100% - 50px);
       overflow: auto;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
 
       .products-card {
         flex-direction: row;

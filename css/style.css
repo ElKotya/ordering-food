@@ -56,6 +56,41 @@ button {
   border: none;
 }
 
+@font-face {
+  font-family: "Montserrat Regular";
+  src: url("/fonts/Montserrat-Regular.eot");
+  src: url("/fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Montserrat-Regular.woff") format("woff"), url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat Regular";
+  src: url("/fonts/Montserrat-Regular.eot");
+  src: url("/fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/Montserrat-Regular.woff") format("woff"), url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat Semibold";
+  src: url("/fonts/Montserrat-SemiBold.eot");
+  src: url("/fonts/Montserrat-SemiBold.eot?#iefix") format("embedded-opentype"), url("/fonts/Montserrat-SemiBold.woff") format("woff"), url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat Extra Light";
+  src: url("/fonts/Montserrat-ExtraLight.eot");
+  src: url("/fonts/Montserrat-ExtraLight.eot?#iefix") format("embedded-opentype"), url("/fonts/Montserrat-ExtraLight.woff") format("woff"), url("/fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat Extra Light";
+  src: url("/fonts/Montserrat-ExtraLight.eot");
+  src: url("/fonts/Montserrat-ExtraLight.eot?#iefix") format("embedded-opentype"), url("/fonts/Montserrat-ExtraLight.woff") format("woff"), url("/fonts/Montserrat-ExtraLight.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 .container {
   max-width: 1300px;
   margin: 0 auto;
@@ -72,6 +107,10 @@ button {
   gap: 35px 20px;
   height: calc(100vh - 177px);
   overflow: auto;
+  padding-bottom: 67px;
+}
+.main .products-list::-webkit-scrollbar {
+  width: 0;
 }
 
 .header {
@@ -81,7 +120,10 @@ button {
   margin-bottom: 75px;
 }
 .header .title {
+  font-family: "Montserrat Semibold";
+  font-weight: 700;
   font-size: 32px;
+  text-transform: uppercase;
 }
 .header__inner, .header__inner-products {
   display: flex;
@@ -145,10 +187,14 @@ button {
   width: 100%;
 }
 .products-card__title {
+  font-family: "Montserrat Regular";
+  font-weight: 500;
   font-size: 17px;
   margin-bottom: 14px;
 }
 .products-card__description {
+  font-family: "Montserrat Extra Light";
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;
 }
@@ -172,6 +218,8 @@ button {
   margin-top: auto;
 }
 .products-card__bottom-price {
+  font-family: "Montserrat Regular";
+  font-weight: 500;
   font-size: 17px;
 }
 .products-card__bottom-btn {
@@ -229,6 +277,8 @@ button {
   color: #FFFFFF;
 }
 .modal__inner-title {
+  font-family: "Montserrat Semibold";
+  font-weight: 700;
   font-size: 32px;
   margin-bottom: 20px;
 }
@@ -267,6 +317,9 @@ button {
   height: calc(100% - 50px);
   overflow: auto;
 }
+.modal__inner-list::-webkit-scrollbar {
+  width: 0;
+}
 .modal__inner-list .products-card {
   flex-direction: row;
   justify-content: space-between;
@@ -296,4 +349,91 @@ button {
 }
 .modal__inner-list .products-card__bottom-btn {
   transform: rotate(45deg);
+}
+
+.login-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/images/background.svg) no-repeat;
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+  background-position: center;
+}
+
+.registration, .authorization {
+  background-color: white;
+  padding: 7px 20px 34px;
+  border-radius: 5px;
+}
+.registration-link, .authorization-link {
+  display: flex;
+  justify-content: right;
+  margin-bottom: 15px;
+}
+.registration-link a, .authorization-link a {
+  font-family: "Montserrat Extra Light";
+  font-size: 11px;
+  font-weight: 300;
+  color: #D58C51;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-input {
+  font-family: "Montserrat Regular";
+  font-weight: 400;
+  border: 1px solid #D58C51;
+  border-radius: 61px;
+  padding: 10px 18px;
+  width: 420px;
+}
+.form-input:focus-visible {
+  outline: none;
+}
+.form-btn {
+  padding: 12px 77px;
+  cursor: pointer;
+  background-color: #D58C51;
+  font-size: 14px;
+}
+.form-btn__wrapper {
+  padding-top: 46px;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  font-family: "Montserrat Bold";
+  font-size: 31px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 36px;
+  text-transform: uppercase;
+}
+
+#checkbox {
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #D58C51;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 0 4px;
+  border-radius: 50%;
+}
+#checkbox:checked {
+  background: #D58C51;
+}
+
+.error-message {
+  color: red;
+  font-size: 8px;
+  font-weight: 300;
+  padding-left: 18px;
+  padding-top: 1px;
 }/*# sourceMappingURL=style.css.map */
